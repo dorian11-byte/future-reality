@@ -1,0 +1,38 @@
+/* Diseños login and register */
+
+.container-login h1{
+    padding: 50px;
+    text-align: center;
+}
+
+.container-login h4 {
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"]{
+    outline: none;
+    padding: 20px;
+    display: block;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #0a1a2a;
+    margin: 20px auto;
+}
+  
+input[type="submit"]{
+    padding: 10px;
+    display: block;
+    color: #efefef;
+    background: #0a1a2a;
+    width: 320px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #00b8eb;
+}
