@@ -5,7 +5,7 @@
 
   if(isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
-    $records->bindParams(':id', $_SESSION['user_is']);
+    $records->bindParam(':id', $_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
 
@@ -34,7 +34,7 @@
   <div class="container-fluid navbar navbar-light" style="background-color: #ffffff;">
       <nav class="navbar navbar-expand-lg container">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">
+          <a class="navbar-brand" href="/index.php">
             <img src="/img/logo.png" alt="Future Reality" width="150">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,9 +82,12 @@
 
             <?php if(!empty($user)) : ?>
                 <li class="d-flex">
-                  <br>Bienvenido. <?= $user['email'] ?>
-                  <br>Has iniciado session
-                  <a href="logout.php">Logout</a>
+                  Bienvenido  <?= $user['email'] ?>
+                  
+                  <form action="logout.php">
+                    <button class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Cerrar Sesion</button>
+                    <button class="btn btn-outline-secondary" type="" style="color: #03A9D4;"> Ir a mis publicaciones</button>
+                  </form>
                 </li>
             <?php else: ?>
                 <form class="d-flex" action="login.php"> 
