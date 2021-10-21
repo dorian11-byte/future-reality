@@ -91,6 +91,8 @@
                     <a class="nav-link" href="#" style="color: #2f3640;">Publicar Gratis <i class="fas fa-plus"></i></a>
                     <button class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Iniciar Sesion</button>
                 </form>
+
+            <?php endif; ?>
           </div>
         </div>
       </nav>
