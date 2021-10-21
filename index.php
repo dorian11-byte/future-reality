@@ -1,3 +1,22 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  if(isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
+    $records->bindParams(':id', $_SESSION['user_is']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+    
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,10 +79,18 @@
                 <a class="nav-link" href="#">Acerca de Nosotros</a>
               </li>
             </ul>
-            <form class="d-flex" action="login.php"> 
-                <a class="nav-link" href="#" style="color: #2f3640;">Publicar Gratis <i class="fas fa-plus"></i></a>
-                <button class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Iniciar Sesion</button>
-            </form>
+
+            <?php if(!empty($user)) : ?>
+                <li class="d-flex">
+                  <br>Bienvenido. <?= $user['email'] ?>
+                  <br>Has iniciado session
+                  <a href="logout.php">Logout</a>
+                </li>
+            <?php else: ?>
+                <form class="d-flex" action="login.php"> 
+                    <a class="nav-link" href="#" style="color: #2f3640;">Publicar Gratis <i class="fas fa-plus"></i></a>
+                    <button class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Iniciar Sesion</button>
+                </form>
           </div>
         </div>
       </nav>

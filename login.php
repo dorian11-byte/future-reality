@@ -1,3 +1,25 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  if(!empty($_POST['email']) && !empty($_POST['password'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE email=:email');
+    $records->bindParam(':email',$_POST['email']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $message = '';
+
+    if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
+      $_SESSION['user_id'] = $results['id'];
+      header('Location: /php-login'); 
+    } else {
+      $message = 'Los datos no coinciden'
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +50,11 @@
 
     <div class="container-login">
         <h1>Login</h1>
+
+        <?php if(!empty($message)): ?>
+          <p><?= $message ?></p>
+        <?php endif; ?>
+
         <form action="login.php" method="post">
             <input type="text" name="email" placeholder="Ingresa tu Email">
             <input type="password" name="password" placeholder="Ingresa tu contraseña">
