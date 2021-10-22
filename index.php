@@ -76,12 +76,12 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Acerca de Nosotros</a>
+                <a class="nav-link" href="nosotros.html">Acerca de Nosotros</a>
               </li>
             </ul>
 
             <?php if(!empty($user)) : ?>
-                <li class="d-flex">
+                <li class="d-flexs">
                   Bienvenido  <?= $user['email'] ?>
                   
                   <form action="logout.php">

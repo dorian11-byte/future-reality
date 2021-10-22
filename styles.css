@@ -255,3 +255,31 @@ nav > ul > li{
   }
 }
 
+/* PAGINAS INTERNAS */
+
+.container-seccion h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.contenido-nosotros {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.image {
+  width: 60%;
+}
+
+.texto-nosotros {
+  width: 37%;
+}
+
+.texto-nosotros blockquote {
+  font-weight: black;
+  font-size: 2.2rem;
+  margin: 0;
+  padding-left: 1rem 0 3rem 0;
+}
