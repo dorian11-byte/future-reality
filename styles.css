@@ -257,9 +257,25 @@ nav > ul > li{
 
 /* PAGINAS INTERNAS */
 
+.container-seccion .img-princ {
+  height: 500px;
+  width: 60%;
+  display: flex;
+  margin: 40px;
+  padding-left: 10px;
+  position: relative;
+  top: 50%;
+  left: 19%;
+}
+
 .container-seccion h1 {
     text-align: center;
     padding: 10px;
+}
+
+.container-seccion h2 {
+  text-align: center;
+  padding: 10px;
 }
 
 .contenido-nosotros {
@@ -282,4 +298,10 @@ nav > ul > li{
   font-size: 2.2rem;
   margin: 0;
   padding-left: 1rem 0 3rem 0;
+}
+
+/* PAGINAS INTERNAS : FORMULARIO DE CONTACTO */
+
+.formulario fieldset{
+  text-align: center;
 }

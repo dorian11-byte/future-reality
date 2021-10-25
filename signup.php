@@ -58,6 +58,8 @@
     
         <form action="signup.php" method="POST">
             <input name="email" type="text" placeholder="Ingresa tu email">
+            <input name="nombre" type="text" placeholder="Ingresa tu nombre">
+            <input name="apellido" type="text" placeholder="Ingresa tu apellido">
             <input name="password" type="password" placeholder="Ingresa una Contraseña">
             <input name="confirm_password" type="password" placeholder="Confirma tu Contraseña">
             <input name="numero" type="text" placeholder="Ingresa tu numero de telefono">
