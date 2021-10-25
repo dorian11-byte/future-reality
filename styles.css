@@ -302,6 +302,59 @@ nav > ul > li{
 
 /* PAGINAS INTERNAS : FORMULARIO DE CONTACTO */
 
-.formulario fieldset{
-  text-align: center;
+.formulario{
+  margin: 40px;
+  padding-left: 10px;
+  position: relative;
+  left: 10%;
+}
+
+.formulario p{
+  font-size: 1.4rem;
+  color: #0a1a2a;
+  margin: 2rem 0 0 0;
+}
+
+.formulario legend{
+  font-size: 2rem;
+  color: #00bbbb;
+}
+
+.formulario label{
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+}
+
+.formulario input:not([type="submit"]), textarea, select{
+  padding: 1rem;
+  display: block;
+  width: 80%;
+  background-color: #efefef;
+  border: 1px solid #00bddf;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.forma-contacto{
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formulario input[type="radio"]{
+   margin: 0;
+   width: auto;
+}
+
+.formulario textarea{
+  height: 20rem;
+}
+
+.boton btn {
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

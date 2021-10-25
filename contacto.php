@@ -90,7 +90,7 @@
 
             </fieldset>
 
-            <input class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;" value="Enviar" >
+            <input class="boton btn btn-outline-secondary" type="submit" style="color: #03A9D4;" value="Enviar" >
         </form>
     </div>
 

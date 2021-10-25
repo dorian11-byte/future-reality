@@ -4,9 +4,11 @@
     $message = '';
 
     if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['numero'])) {
-        $sql = "INSERT INTO users (email, password, numero) VALUES (:email, :password, :numero)";
+        $sql = "INSERT INTO users (email, nombre, apellido, password, numero) VALUES (:email, :nombre, :apellido, :password, :numero)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':email',$_POST['email']);
+        $stmt->bindParam(':nombre',$_POST['nombre']);
+        $stmt->bindParam(':apellido',$_POST['apellido']);
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         $stmt->bindParam(':password',$password);
         $stmt->bindParam(':numero',$_POST['numero']);
