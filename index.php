@@ -124,21 +124,21 @@
       <img src="/img/casa1.jpg">
       <h4>Casa en Venta en Mazatlan</h4>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium earum illum laudantium ea, doloribus deleniti enim, rerum sunt repellendus eaque eius consectetur, necessitatibus iure. Dolores vero sint delectus corporis enim!</p>
-      <a href="#">Pedir Información</a>
+      <a href="contacto.php">Pedir Información</a>
     </div>
 
     <div class="card">
       <img src="/img/casa2.jpg">
       <h4>Casa en Venta en Manzanillo</h4>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium earum illum laudantium ea, doloribus deleniti enim, rerum sunt repellendus eaque eius consectetur, necessitatibus iure. Dolores vero sint delectus corporis enim!</p>
-      <a href="#">Pedir Información</a>
+      <a href="contacto.php">Pedir Información</a>
     </div>
 
     <div class="card">
       <img src="/img/casa3.jpg">
       <h4>Casa en Venta en Guadalajara</h4>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium earum illum laudantium ea, doloribus deleniti enim, rerum sunt repellendus eaque eius consectetur, necessitatibus iure. Dolores vero sint delectus corporis enim!</p>
-      <a href="#">Pedir Información</a>
+      <a href="contacto.php">Pedir Información</a>
     </div>
 
   </div>
