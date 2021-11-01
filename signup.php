@@ -14,7 +14,13 @@
         $stmt->bindParam(':numero',$_POST['numero']);
 
         if($stmt->execute()) {
-            $message = 'Ingresado correctamente';
+          $message = "<script>
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Registrado correctamenre',
+                  confirmButtonText: 'confirmar',
+                })
+          </script>";
         } else {
             $message = 'ha ocurrido un error en su contraseña';
         }
@@ -38,13 +44,13 @@
     <div class="container-fluid navbar navbar-light" style="background-color: #0a1a2a;">
       <nav class="navbar navbar-expand-lg container">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">
+          <a class="navbar-brand" href="/index.php">
             <img src="/img/logobc.png" alt="Future Reality" width="150">
           </a>
             <h2 style="color: white">Registro</h2>
             <form class="d-flex" action=""> 
                 <a class="nav-link" href="login.php" style="color: white;">Iniciar sesion  <i class=" fas fa-undo-alt"></i></a>
-                <a class="nav-link" href="index.html" style="color: white;">Regresar al Inicio  <i class=" fas fa-home"></i></a>
+                <a class="nav-link" href="index.php" style="color: white;">Regresar al Inicio  <i class=" fas fa-home"></i></a>
             </form>
           </div>
         </div>
@@ -52,13 +58,13 @@
     </div>
 
     <?php if(!empty($message)): ?>
-        <p><?= $message ?></p>
+      <p><?= $message ?></p>
     <?php endif; ?>
 
     <div class="container-login">
         <h1>SignUp</h1>
     
-        <form action="signup.php" method="POST">
+        <form id="registro" action="signup.php" method="POST">
             <input name="email" type="text" placeholder="Ingresa tu email">
             <input name="nombre" type="text" placeholder="Ingresa tu nombre">
             <input name="apellido" type="text" placeholder="Ingresa tu apellido">
@@ -71,6 +77,7 @@
     <script src="https://kit.fontawesome.com/8d06b4574a.js" crossorigin="anonymous"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/sweetAlert.js"></script>
 </body>
 </html>

@@ -36,12 +36,12 @@
 <div class="container-fluid navbar navbar-light" style="background-color: #0a1a2a;">
       <nav class="navbar navbar-expand-lg container">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">
+          <a class="navbar-brand" href="/index.php">
             <img src="/img/logobc.png" alt="Future Reality" width="150">
           </a>
             <h2 style="color: white">Bienvenido de nuevo </h2>
             <form class="d-flex" action=""> 
-                <a class="nav-link" href="index.html" style="color: white;">Regresar al Inicio <i class="fas fa-undo-alt"></i></a>
+                <a class="nav-link" href="index.php" style="color: white;">Regresar al Inicio <i class="fas fa-undo-alt"></i></a>
             </form>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <p><?= $message ?></p>
         <?php endif; ?>
 
-        <form action="login.php" method="post">
+        <form id="inicio" action="login.php" method="post">
             <input type="text" name="email" placeholder="Ingresa tu Email">
             <input type="password" name="password" placeholder="Ingresa tu contraseña">
             <input type="submit" value="Send">
@@ -66,6 +66,7 @@
     <script src="https://kit.fontawesome.com/8d06b4574a.js" crossorigin="anonymous"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/sweetAlert.js"></script>
 </body>
 </html>

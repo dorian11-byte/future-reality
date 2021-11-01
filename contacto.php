@@ -14,12 +14,12 @@
     <div class="container-fluid navbar navbar-light" style="background-color: #0a1a2a;">
         <nav class="navbar navbar-expand-lg container">
           <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">
+            <a class="navbar-brand" href="/index.php">
               <img src="/img/logobc.png" alt="Future Reality" width="150">
             </a>
               <h2 style="color: white"> Contacto </h2>
               <form class="d-flex" action=""> 
-                  <a class="nav-link" href="index.html" style="color: white;">Regresar al Inicio <i class="fas fa-undo-alt"></i></a>
+                  <a class="nav-link" href="index.php" style="color: white;">Regresar al Inicio <i class="fas fa-undo-alt"></i></a>
               </form>
             </div>
           </div>
