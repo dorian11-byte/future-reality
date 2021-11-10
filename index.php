@@ -83,8 +83,10 @@
                   Bienvenido  <?= $user['email'] ?>
                   
                   <form action="logout.php">
-                    <button class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Cerrar Sesion</button>
-                    <button class="btn btn-outline-secondary" src="/dash/index.php" style="color: #03A9D4;"> Ir a mis publicaciones</button>
+                    <button class="cerrar btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Cerrar Sesion</button>
+                  </form>
+                  <form action="/dash/indexdash.php">
+                        <button class="publicaciones btn btn-outline-secondary" href="../dash/index.php" style="color: #03A9D4;"> Ir a mis publicaciones</button>
                   </form>
                 </div>
             <?php else: ?>
