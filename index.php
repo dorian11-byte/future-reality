@@ -43,12 +43,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link" href="propiedades.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Comprar
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link" href="propiedades_r.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Rentar
                 </a>
               </li>
