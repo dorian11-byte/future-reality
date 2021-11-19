@@ -42,31 +42,15 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Comprar
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Ciudad</a></li>
-                  <li><a class="dropdown-item" href="#">Estado</a></li>
-                  <li><a class="dropdown-item" href="#">Municipio</a></li>
-                  <li><a class="dropdown-item" href="#">Colonia</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Ubicacion</a></li>
-                </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Rentar
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Ciudad</a></li>
-                  <li><a class="dropdown-item" href="#">Estado</a></li>
-                  <li><a class="dropdown-item" href="#">Municipio</a></li>
-                  <li><a class="dropdown-item" href="#">Colonia</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Ubicacion</a></li>
-                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php">
@@ -76,6 +60,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="nosotros.html">Acerca de Nosotros</a>
               </li>
+
+              
+              <div class="search-box">
+                <input type="text" class="search-txt" placeholder="Buscar">
+                  <a href="#" class="search-btn">
+                    <i class="bi bi-search"></i>
+                  </a>
+                </input>
+              </div>
+            
             </ul>
 
             <?php if(!empty($user)) : ?>
@@ -104,19 +98,53 @@
   <div class="content">
     <h1>Encuentra tu Casa Ideal</h1>
     <nav>
-      <ul>
-        <li><a href="#">Renta</a></li>
-        <li><a href="#">Venta</a></li>
-        <li><a href="#">Ofertas</a></li>
-      </ul>
-    </nav>          
-    <div class="search-box">
-      <input type="text" class="search-txt" placeholder="Buscar">
-        <a href="#" class="search-btn">
-          <i class="bi bi-search"></i>
-        </a>
-      </input>
-    </div>
+        <ul>
+          <form class="filtros" id="form-filter" name="form-filter" method="POST" action="propiedades.php">
+            <div class="forma-busquedad">
+              <label for="buscar-venta">Venta</label>
+              <input name="contacto" type="radio" value="venta" id="buscar-venta">
+
+              <label for="buscar-renta">Renta</label>
+              <input name="contacto" type="radio" value="renta" id="buscar-renta">
+            </div> 
+            <fieldset>
+              <label for="opciones">Ubicacion:</label>
+                <select id="opciones">
+                  <option value="" disable selected>--Seleccione una opcion--</option>
+                  <option value="Vende">Colima</option>
+                  <option value="Compra">Manzanillo</option>
+                  <option value="Renta">Jalisco</option>
+                </select> 
+            </fieldset>
+
+            <fieldset>
+              <br><label for="precio">Precio</label>
+              <input type="number" placeholder="Precio" id="precio">
+
+              <label for="cuartos">Cuartos</label>
+              <input type="number" placeholder="Cuartos" id="cuartos">
+                
+              <label for="baños">Baños</label>
+              <input type="number" placeholder="Baños" id="baños">
+            </fieldset>
+
+            <fieldset>
+              <label for="tamaño">Tamaño en M2</label>
+              <input type="number" placeholder="Tamaño" id="tamaño"><br>
+
+              <label for="opciones1">Amenidades:</label>
+                <select id="opciones1">
+                  <option value="" disable selected>--Seleccione una opcion--</option>
+                  <option value="Vende">Alberca</option>
+                  <option value="Compra">Cancha de juegos</option>
+                  <option value="Renta">Seguridad de entrada</option>
+                </select>
+            </fieldset>
+            <a class="btn-filtro" type="submit" value="Enviar" style="color: white;">BUSCAR <i class="fas fa-arrow-right"></i></a>
+          </form>
+        </ul>
+      </nav>          
+    
   </div>
 
   <h2 class="tituloinmuebles">Inmuebles que te pudieran interesar</h2>
