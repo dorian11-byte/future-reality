@@ -6,7 +6,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <small>&copy; 2021 <b>Future Reality </b> - Todos los derechos reservados </small>
                     </div>
                 </div>
             </footer>
