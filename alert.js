@@ -1,3 +1,5 @@
-$("#btn1").click(function(){
-    alert("hhh");
+$("#Modalgratis").click(function(){
+    Swal.fire(
+        'Holaaaaa'
+    )
 });

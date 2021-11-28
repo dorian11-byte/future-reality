@@ -14,15 +14,13 @@
         $stmt->bindParam(':numero',$_POST['numero']);
 
         if($stmt->execute()) {
-          $message = "<script>
-                Swal.fire({
-                  icon: 'success',
-                  title: 'Registrado correctamenre',
-                  confirmButtonText: 'confirmar',
-                })
-          </script>";
+          $message = '<div class="alert alert-success" role="alert">
+                        registrado correctamente! <a href="login.php"> Ir a iniciar sesion </a>
+                      </div>';
         } else {
-            $message = 'ha ocurrido un error en su contraseña';
+            $message = '<div class="alert alert-danger" role="alert">
+                          ha ocurrido un error en su regsitro.
+                        </div>';
         }
     }
 ?>
@@ -78,6 +76,5 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="assets/js/sweetAlert.js"></script>
 </body>
 </html>

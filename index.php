@@ -84,7 +84,7 @@
                   </form>
                 </div>
             <?php else: ?>
-                <button class="btn" id="btn1" style="color: #2f3640;">Publicar Gratis <i class="fas fa-plus"></i></button>
+                <button class="btn" style="color: #2f3640;">Publicar Gratis <i class="fas fa-plus"></i></button>
                 <form class="d-flex" action="login.php"> 
                     <button class="btn btn-outline-secondary" type="submit" style="color: #03A9D4;">Iniciar Sesion</button>
                 </form>
@@ -172,7 +172,21 @@
     </div>
 
   </div>
+  
+  <!-- Bootstrap core JavaScript-->
+  <script src="../dash/vendor/jquery/jquery.min.js"></script>
+    <script src="dash/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="dash/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="dash/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="dash/vendor/chart.js/Chart.min.js"></script>
+
+    
   <script src="https://kit.fontawesome.com/8d06b4574a.js" crossorigin="anonymous"></script>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
@@ -192,7 +206,7 @@
             SOBRE NOSOTROS
           </h2>
           <i class="fas fa-envelope">  draygoza@ucol.mx</i><br>
-          <i class="fas fa-phone-alt">  314-197-23-59</i><br>
+          <i class="fas fa-phone-alt">  999-9999-999</i><br>
           <i class="fas fa-university">  Facultad de Ingenieria Electromecanica</i>
         </div>
         <div class="box">

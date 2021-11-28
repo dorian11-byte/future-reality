@@ -55,7 +55,7 @@
 
         <h2>Llene el formulario de contacto</h2>
 
-        <form class="formulario">
+        <form class="formulario" method="POST" action="formulario_send.php">
             <fieldset>
 
               <legend>Informacion Personal</legend>
