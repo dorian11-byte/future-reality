@@ -11,7 +11,49 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AgregarModal">
         Agregar una Propiedad
     </button>
+    <br><br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Habitaciones</th>
+                <th scope="col">Baños</th>
+                <th scope="col">Area</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col"><i class="fas fa-sliders-h"></i></th> 
+            </tr>
+        </thead>
+            <?php
+                $sql = "SELECT * FROM propiedades";                
+            ?>
+        <tbody>
+            <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            </tr>
+            <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            </tr>
+            <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            </tr>
+        </tbody>
 
+            <?php
+                
+            ?>
+    </table>        
+    
 </div>
 
 
@@ -30,9 +72,3 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>

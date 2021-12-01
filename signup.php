@@ -63,6 +63,7 @@
         <h1>SignUp</h1>
     
         <form id="registro" action="signup.php" method="POST">
+            
             <input name="email" type="text" placeholder="Ingresa tu email">
             <input name="nombre" type="text" placeholder="Ingresa tu nombre">
             <input name="apellido" type="text" placeholder="Ingresa tu apellido">

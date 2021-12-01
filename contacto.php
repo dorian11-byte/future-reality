@@ -1,3 +1,34 @@
+<?php
+    require 'database.php';
+
+    $message = '';
+
+    if(!empty($_POST['email']) && !empty($_POST['nombre'] && !empty($_POST['telefono']))) {
+        $sql = "INSERT INTO contacto (nombre, email, telefono, mensaje, opcasa, precio, maneracontacto, fecha, hora) VALUES (:nombre, :email, :telefono, :mensaje, :opcasa, :precio, :maneracontacto, :fecha, :hora)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nombre',$_POST['nombre']);
+        $stmt->bindParam(':email',$_POST['email']);
+        $stmt->bindParam(':telefono',$_POST['telefono']);
+        $stmt->bindParam(':mensaje',$_POST['mensaje']);
+        $stmt->bindParam(':opcasa',$_POST['opcasa']);
+        $stmt->bindParam(':precio',$_POST['precio']);
+        $stmt->bindParam(':maneracontacto',$_POST['maneracontacto']);
+        $stmt->bindParam(':fecha',$_POST['fecha']);
+        $stmt->bindParam(':hora',$_POST['hora']);
+        
+
+        if($stmt->execute()) {
+          $message = '<div class="alert alert-success" role="alert">
+                        Enviado correctamente! <a href="index.php"> Ir al inicio </a>
+                      </div>';
+        } else {
+            $message = '<div class="alert alert-danger" role="alert">
+                          ha ocurrido un error en el envio :(
+                        </div>';
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,24 +81,28 @@
         </nav>
     </div>
 
+    <?php if(!empty($message)): ?>
+      <p><?= $message ?></p>
+    <?php endif; ?>
+
     <div class="container-seccion">
         <img class="img-princ" src="/img/contacto.jpg" alt="Imagen Contacto">
 
         <h2>Llene el formulario de contacto</h2>
 
-        <form class="formulario" method="POST" action="formulario_send.php">
+        <form class="formulario" method="POST" action="contacto.php">
             <fieldset>
 
               <legend>Informacion Personal</legend>
               
               <label for="nombre">Nombre</label>
-              <input type="text" placeholder="Tu nombre" id="nombre">
+              <input type="text" placeholder="Tu nombre" id="nombre" name="nombre">
 
               <label for="email">E-mail</label>
-              <input type="email" placeholder="Tu e-mail" id="email">
+              <input type="email" placeholder="Tu e-mail" id="email" name="email">
               
               <label for="telefono">Telefono</label>
-              <input type="tel" placeholder="Tu telefono" id="telefono">
+              <input type="tel" placeholder="Tu telefono" id="telefono" name="telefono">
 
               <label for="mensaje">Mensaje:</label>
               <textarea name="mensaje" id="mensaje"></textarea>
@@ -79,7 +114,7 @@
               <legend>Informacion del Propietario</legend>
 
               <label for="opciones">Vende, Compra o Renta:</label>
-              <select id="opciones">
+              <select id="opciones" name="opcasa">
                 <option value="" disable selected>--Seleccione una opcion--</option>
                 <option value="Vende">Vende</option>
                 <option value="Compra">Compra</option>
@@ -87,7 +122,7 @@
               </select>
 
               <label for="presupuesto">Precio o Presupuesto</label>
-              <input type="number" placeholder="Tu precio o presupuesto" id="presupuesto">
+              <input type="number" name="precio" placeholder="Tu precio o presupuesto" id="presupuesto">
 
             </fieldset>
 
@@ -98,19 +133,19 @@
 
               <div class="forma-contacto">
                 <label for="contactar-telefono">Telefono</label>
-                <input name="contacto" type="radio" value="telefono" id="contactar-telefono">
+                <input name="maneracontacto" type="radio" value="telefono" id="contactar-telefono">
 
                 <label for="contactar-email">E-mail</label>
-                <input name="contacto" type="radio" value="emails" id="contactar-email">
+                <input name="maneracontacto" type="radio" value="email" id="contactar-email">
               </div>
 
               <p>Si eligio telefono, elija la fecha y la hora</p>
 
               <label for="fecha">fecha</label>
-              <input type="date" id="fecha">
+              <input type="date" id="fecha" name="fecha">
 
               <label for="hora">Hora</label>
-              <input type="time" id="hora" min="09:00" max="20:00">
+              <input type="time" id="hora" min="09:00" max="20:00" name="hora">
 
             </fieldset>
 

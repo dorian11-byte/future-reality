@@ -63,6 +63,7 @@
             <input type="submit" value="Send">
         </form>
         <h4>No estas registrado? <a href="signup.php">Registrate aqui</a></h4>
+        <h4>Si eres Administrador <a href="loginadmin.php">Click aqui</a></h4>
     </div>
 
     <script src="https://kit.fontawesome.com/8d06b4574a.js" crossorigin="anonymous"></script>
