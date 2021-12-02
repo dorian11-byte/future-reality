@@ -3,6 +3,7 @@
 <!--inicio del contenido principal-->
 <?php
     $conexion = mysqli_connect('localhost', 'root', '', 'portal_inmob');
+
 ?>
 
 <div class="container">
@@ -44,7 +45,11 @@
                 <td><?php echo $mostrar['wc'] ?></td>
                 <td><?php echo $mostrar['area'] ?></td>
                 <td><?php echo $mostrar['ciudad'] ?></td>
-                <td><a href="#" style="color: red;"><i class="fas fa-times"></i></a>  <a href="actualizar.php?id=<?php echo $mostrar['id'] ?>"><i class="fas fa-edit" href="#"></i></a></td>
+                <td>
+                    <a href="borrar.php?id=<?php echo $mostrar['id'] ?>" style="color: red;"><i class="fas fa-times" type="submit"></i></a>
+                    <a href="actualizar.php?id=<?php echo $mostrar['id'] ?>"><i class="fas fa-edit" href="#"></i></a>
+            
+                </td>
             </tr>
         </tbody>
         <?php

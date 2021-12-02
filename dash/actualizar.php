@@ -67,27 +67,29 @@
             mkdir($carpetaImagenes);
         }
 
+        $nombreImg = '';
+
         //subida de archivos
         if($imagen['name'])
         {
             unlink($carpetaImagenes . $propieda['imagen']);
+
+            //generar nombre unico
+
+            $nombreImg = md5( uniqid( rand(), true ) ) . ".jpg";
+
+            //subir img
+
+            move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImg );
+        }else{
+            $nombreImg = $propieda['imagen'];
         }
         
 
-        //generar nombre unico
-
-        $nombreImg = md5( uniqid( rand(), true ) ) . ".jpg";
-
-        //subir img
-
-        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImg );
 
         $query = "UPDATE propiedades SET titulo='${titulo}', precio=${precio}, imagen=${nombreImg}, estado='${estado}', amenidades='${amenidades}', descripcion='${descripcion}', habitaciones=${habitaciones}, wc=${wc}, estacionamiento=${estacionamiento}, area=${area}, ciudad='${ciudad}' 
         WHERE id = ${id}";
 
-        echo $query;
-
-        exit;
 
         $resultado = mysqli_query($db, $query);
 
