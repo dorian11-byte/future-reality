@@ -79,16 +79,16 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="indexdash.php" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-dollar-sign"></i>
-                    <span>En Venta</span>
+                    <span>Propiedades</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="dashcontacto.php" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-map-signs"></i>
-                    <span>En Renta</span>
+                    <span>Mensajes de Contacto</span>
                 </a>
             </li>
 

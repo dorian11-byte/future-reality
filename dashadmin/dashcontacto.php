@@ -6,28 +6,25 @@
 ?>
 
 <div class="container">
-    <h1>Contenido Principal</h1><br>
+    <h1>Todas los mensajes de contacto</h1><br>
 
-    <form action="agregarpropiedad.php">
-        <button class="btn btn-primary" type="submit" >Agregar una Propiedad</button>
-    </form>
-    <br><br>
     <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Titulo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Opccion Casa</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Estado</th>
-                <th scope="col">Habitaciones</th>
-                <th scope="col">Baños</th>
-                <th scope="col">Area</th>
-                <th scope="col">Ciudad</th>
+                <th scope="col">Forma Contactar</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
                 <th scope="col"><i class="fas fa-sliders-h"></i></th> 
             </tr>
         </thead>
             <?php
-                $sql = "SELECT * FROM propiedades";
+                $sql = "SELECT * FROM contacto";
                 $result = mysqli_query($conexion,$sql);
                 
                 while($mostrar=mysqli_fetch_array($result)){
@@ -35,19 +32,22 @@
         <tbody>
             <tr>
                 <td><?php echo $mostrar['id'] ?></td>
-                <td><?php echo $mostrar['titulo'] ?></td>
+                <td><?php echo $mostrar['nombre'] ?></td>
+                <td><?php echo $mostrar['email'] ?></td>
+                <td><?php echo $mostrar['telefono'] ?></td>
+                <td><?php echo $mostrar['opcasa'] ?></td>
                 <td><?php echo $mostrar['precio'] ?></td>
-                <td><?php echo $mostrar['estado'] ?></td>
-                <td><?php echo $mostrar['habitaciones'] ?></td>
-                <td><?php echo $mostrar['wc'] ?></td>
-                <td><?php echo $mostrar['area'] ?></td>
-                <td><?php echo $mostrar['ciudad'] ?></td>
+                <td><?php echo $mostrar['maneracontacto'] ?></td>
+                <td><?php echo $mostrar['fecha'] ?></td>
+                <td><?php echo $mostrar['hora'] ?></td>
             </tr>
         </tbody>
         <?php
             }
         ?>
     </table>        
+    
+</div>
     
 </div>
 
@@ -66,4 +66,3 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-

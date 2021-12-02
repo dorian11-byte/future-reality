@@ -41,44 +41,6 @@
             </div>
         </div>
     </div>
-
-    <?php
-        require '../database.php';
-
-
-        $message = '';
-
-        if(!empty($_POST['titulo']) && !empty($_POST['precio'] && !empty($_POST['estado']))) {
-            $sql = "INSERT INTO propiedades (titulo, precio, estado, amenidades, img, descripccion, habitaciones, wc, estacionamiento, area, ciudad) VALUES (:titulo, :precio, :estado, :amenidades, :img, :descripccion, :habitaciones, :wc, :estacionamiento, :area, :ciudad)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':titulo',$_POST['titulo']);
-            $stmt->bindParam(':precio',$_POST['precio']);
-            $stmt->bindParam(':estado',$_POST['estado']);
-            $stmt->bindParam(':amenidades',$_POST['amenidades']);
-            $stmt->bindParam(':img',$_POST['img']);
-            $stmt->bindParam(':descripccion',$_POST['descripccion']);
-            $stmt->bindParam(':habitaciones',$_POST['habitaciones']);
-            $stmt->bindParam(':wc',$_POST['wc']);
-            $stmt->bindParam(':estacionamiento',$_POST['estacionamiento']);
-            $stmt->bindParam(':area',$_POST['area']);
-            $stmt->bindParam(':ciudad',$_POST['ciudad']);   
-            
-
-            if($stmt->execute()) {
-            $message = '<div class="alert alert-success" role="alert">
-                            Enviado correctamente! <a href="index.php"> Ir al inicio </a>
-                        </div>';
-            } else {
-                $message = '<div class="alert alert-danger" role="alert">
-                            ha ocurrido un error en el envio :(
-                            </div>';
-            }
-        }
-    ?>
-
-    <?php if(!empty($message)): ?>
-      <p><?= $message ?></p>
-    <?php endif; ?>
     <!-- Agregar Modal-->
     <div class="modal fade" id="AgregarModal" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
         aria-hidden="true">

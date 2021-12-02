@@ -13,7 +13,7 @@
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header('Location: /index.php'); 
+      header('Location: /dashadmin/indexdash.php'); 
     } else {
       $message = '<div class="alert alert-danger" role="alert">
                     LOS DATOS NO COINCIDEN!

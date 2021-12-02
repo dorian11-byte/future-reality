@@ -2,13 +2,6 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <small>&copy; 2021 <b>Future Reality </b> - Todos los derechos reservados </small>
-                    </div>
-                </div>
-            </footer>
             <!-- End of Footer -->
 
         </div>
