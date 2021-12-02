@@ -23,11 +23,9 @@
         //var_dump($_POST);
         //echo "</pre>";
 
-        echo "<pre>";
-        var_dump($_FILES);
-        echo "</pre>";
-
-        exit;
+        //echo "<pre>";
+        //var_dump($_FILES);
+        //echo "</pre>";
 
         $titulo = $_POST['titulo'];
         $precio = $_POST['precio'];
@@ -46,35 +44,30 @@
         $imagen = $_FILES['img'];
         
 
-        $medida = 1000 * 100;
-
-        if($imagen['size'] < $medida){
-            echo '<div class="alert alert-danger" role="alert">
-                    La imagen es mayor del tamaño permitido, 100KB !
-                </div>';
-        }
-
-
+        $medida = 1000 * 1000;
 
         //insertar en la base de datos
 
         //subida de archivos
 
         //crear carpeta
-        $carpetaImagenes = "../imagenespropiedades";
+        $carpetaImagenes = "../imagenespropiedades/";
 
         if(!is_dir($carpetaImagenes)){
             mkdir($carpetaImagenes);
         }
 
+        
+        //generar nombre unico
+
+        $nombreImg = md5( uniqid( rand(), true ) ) . ".jpg";
+
         //subir img
 
-        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . "archivo.jpg");
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImg );
 
-
-        $query = "INSERT INTO propiedades (titulo, precio, estado, amenidades, descripcion, habitaciones, wc, estacionamiento, area, ciudad) 
-        VALUES ('$titulo', '$precio', '$estado','$amenidades','$descripcion','$habitaciones','$wc','$estacionamiento','$area','$ciudad' )";
-
+        $query = "INSERT INTO propiedades (titulo, precio, estado, amenidades, imagen, descripcion, habitaciones, wc, estacionamiento, area, ciudad) 
+        VALUES ('$titulo', '$precio', '$estado','$amenidades','$nombreImg','$descripcion','$habitaciones','$wc','$estacionamiento','$area','$ciudad' )";
         //echo $query;
 
         $resultado = mysqli_query($db, $query);
@@ -100,7 +93,10 @@
 </head>
 
 <body>
-    
+
+    <div class="conten">   
+        <h1>Subir</h1>
+    </div>
     
     <div class="container-seccion">
         <form class="formulario" method="POST" action="agregarpropiedad.php" enctype="multipart/form-data">                    
