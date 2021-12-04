@@ -160,6 +160,7 @@ nav > ul{
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
+  margin-bottom: 2rem;
 }
 
 .container_card .card{
@@ -170,7 +171,22 @@ nav > ul{
   overflow: hidden;
   margin: 20px;
   text-align: center;
-  transition: all 0.25s;  
+  transition: all 0.25s; 
+  display: block;
+  margin-bottom: 20%;
+}
+
+.container_card .card-group{
+  width: 350px;
+  height: 470px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  transition: all 0.25s; 
+  display: flex;
+  margin-bottom: 20%;
 }
 
 .container_card .card:hover{
@@ -201,6 +217,7 @@ nav > ul{
 
 
 .pie-pagina{
+  display: fixed;
   margin-top: 10%;
   width: 100%;
   background-image: url(img/footer.png)

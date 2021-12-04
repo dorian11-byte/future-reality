@@ -140,7 +140,7 @@
                   <option value="Renta">Seguridad de entrada</option>
                 </select>
             </fieldset>
-            <a class="btn-filtro" type="submit" value="Enviar" style="color: white;">BUSCAR <i class="fas fa-arrow-right"></i></a>
+            <a class="btn-filtro" href="propiedades.php" value="Enviar" style="color: white;">BUSCAR <i class="fas fa-arrow-right"></i></a>
           </form>
         </ul>
       </nav>          

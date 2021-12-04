@@ -50,10 +50,117 @@
         </nav>
     </div>
 
+    <?php
+      require 'database.php';
 
+      //consultar base de datos
+      $db = mysqli_connect('localhost', 'root', '', 'portal_inmob');
 
+      $query = "SELECT * FROM propiedades ";
 
+      //obtener resultado 
+      $result = mysqli_query($db, $query);
+    ?>
+    <?php //while($propiedad = mysqli_fetch_assoc($result)){?>
+    <link rel="stylesheet" href="styles.css">
 
+    <div class="container_card">
+      <div class="card-group" >
+        <div class="card"  style="display: block;">
+          <img src="/img/1.png" class="card-img">
+          <div class="card-body">
+            <h5 class="card-title"> Casa En Venta En Manzanillo, Colima</h5>
+            <p class="card-text">105 m² totales
+                3 recámaras
+                3 baños 
+                Pedro Salazar 102, Salahua, Manzanillo, Colima</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <a href="contacto.php">Pedir Información</a>
+        </div>
+      </div>
+      <div class="card-group" >
+        <div class="card"  style="display: block;">
+          <img src="/img/2.png" class="card-img">
+          <div class="card-body">
+            <h5 class="card-title"> Casa En Venta, Manzanillo, Colima</h5>
+            <p class="card-text">439000 dólaresU$S439,000
+                  758 m² totales
+                  4 recámaras
+                  3 baños
+                  Calle De La Cima, Península De Santiago, Manzanillo, Colima</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <a href="contacto.php">Pedir Información</a>
+        </div>
+      </div>
+      <div class="card-group" >
+        <div class="card"  style="display: block;">
+          <img src="/img/3.png" class="card-img">
+          <div class="card-body">
+            <h5 class="card-title">Casa En Condominio En Venta, Manzanillo, Colima</h5>
+            <p class="card-text">7,955,000 pesos$7,955,000
+                1200 m² totales
+                3 recámaras
+                4 baños
+                Fracc. La Ceiba, Framboyant, Santiago, Manzanillo, Colima</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <a href="contacto.php">Pedir Información</a>
+        </div>
+      </div>
+      <div class="card-group" >
+        <div class="card"  style="display: block;">
+          <img src="/img/4.png" class="card-img">
+          <div class="card-body">
+            <h5 class="card-title">Casa En Venta, Manzanillo, Colima</h5>
+            <p class="card-text">1390000 pesos$1,390,000
+                  853 m² totales
+                  4 recámaras
+                  3 baños
+                  Ejido Canoas Colindante Solar, Las Canoas, Manzanillo, Colima</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <a href="contacto.php">Pedir Información</a>
+        </div>
+      </div>
+      <div class="card-group" >
+        <div class="card"  style="display: block;">
+          <img src="/img/5.png" class="card-img">
+          <div class="card-body">
+            <h5 class="card-title">Casa En Venta, Manzanillo, Colima</h5>
+            <p class="card-text">6500000 pesos$6,500,000
+              3 recámaras
+              400 m² totales
+              Calle Mar Rojo, Del Mar, Manzanillo, Colima
+              2 baños
+            </p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <a href="contacto.php">Pedir Información</a>
+        </div>
+      </div>
+      <div class="card-group" >
+        <div class="card"  style="display: block;">
+          <img src="/img/6.png" class="card-img">
+          <div class="card-body">
+            <h5 class="card-title">Departamento En Renta, Manzanillo, Colima</h5>
+            <p class="card-text">17000 pesos$17,000
+                  3 recámaras
+                  3 baños
+                  Ponto Horizonte. Blvd Miguel De La Madrid Hurtado, Santiago, Manzanillo, 
+                  Colima</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+          <a href="contacto.php">Pedir Información</a>
+        </div>
+      </div>
+
+    </div>
+    <?php
+      //cerrar la conexion
+      //}
+    ?>
 
   <script src="https://kit.fontawesome.com/8d06b4574a.js" crossorigin="anonymous"></script>
   <!-- JavaScript Bundle with Popper -->
@@ -61,10 +168,14 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="assets/js/sweetAlert.js"></script>
     <footer class="pie-pagina">
-  
-      <div class="grupo2">
+      <div class="grupo2" style="position: fixed;
+          left:0px;
+          bottom:0px;
+          height:50px;
+          width:100%;">
         <small>&copy; 2021 <b>Future Reality </b> - Todos los derechos reservados </small>
       </div>
     </footer>
 </body>
 </html>
+
