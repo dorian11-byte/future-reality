@@ -196,7 +196,7 @@
     <div class="grupo1">
       <div class="box">
         <figure>
-          <a href="#">
+          <a href="index.php">
               <img src="img/logobc.png" alt="Future Reality">
             </a>
           </figure>
